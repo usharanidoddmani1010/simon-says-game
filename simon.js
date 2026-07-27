@@ -7,6 +7,7 @@ let btns=["yellow","red","purple","green"];
 
 let started=false; // initialy started is false
 let level=0;
+let highScore = 0;
 
 
 let h2=document.querySelector("h2");
@@ -88,14 +89,25 @@ function checkAns(idx){
             setTimeout(levelUp,1000);  // here the level changes
         }
     }
-    else{
-        h2.innerHTML=`game over! Your score was <b>${level}<b> <br>Press any key to start`;
-        document.querySelector("body").style.backgroundColor="red";
-        setTimeout(function(){
-            document.querySelector("body").style.backgroundColor="white";
-        },150); // this is for again reseting 
-        reset();
+    else {
+
+    // Update high score
+    if (level > highScore) {
+        highScore = level;
     }
+
+    h2.innerHTML = `Game Over! Your score was <b>${level}</b>
+    <br>Highest Score: <b>${highScore}</b>
+    <br>Press any key to start`;
+
+    document.querySelector("body").style.backgroundColor = "red";
+
+    setTimeout(function () {
+        document.querySelector("body").style.backgroundColor = "white";
+    }, 150);  // for again restarting
+
+    reset();
+}
 }
 
 function btnPress(){
