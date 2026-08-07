@@ -103,7 +103,7 @@ Simon-Says-Game/
 ## ▶️ Live Demo
 
 ```text
-Live Demo: https://simon-says-game-26.netlify.app
+- 🎮 **Live Demo:** https://simon-says-game-26.netlify.app/
 ```
 
 ---
